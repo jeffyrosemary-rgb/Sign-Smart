@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -v '^agenticorg$' requirements.txt)",
+      "Bash(curl -s https://pypi.org/pypi/agenticorg/json)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://pypi.org/pypi/agenticorg/json)",
+      "Read(//usr/bin/**)",
+      "Bash(mdfind \"kMDItemFSName == 'python3.1*'\")",
+      "Bash(xcrun --find python3)",
+      "Bash(/usr/bin/python3 -c \"import sys; print\\(sys.version\\)\")",
+      "Bash(curl -LsSf https://astral.sh/uv/install.sh)",
+      "Bash(sh)",
+      "Bash(cat /tmp/signsmart.log 2>&1 *)",
+      "Read(//private/tmp/**)",
+      "Bash(curl -s http://localhost:8000/)",
+      "Bash(curl -s -o /dev/null -w \"chat page: %{http_code}\\\\n\" http://localhost:8000/chat)",
+      "Bash(curl -s -X POST http://localhost:8000/api/message -F phone=web:test1 -F text= -F 'files=@fake.jpg;type=image/jpeg')",
+      "Bash(curl -s -X POST http://localhost:8000/api/message -F phone=web:test1 -F text=1)",
+      "Bash(curl -s 'http://localhost:8000/api/outbox?phone=web:test1&since=0')",
+      "Bash(python3 -c \"import json,sys; [print\\('BOT:', m['body'][:300], '\\\\n---'\\) for m in json.load\\(sys.stdin\\) if m['from']=='bot']\")",
+      "Bash(curl -s http://localhost:8000/d/Pdxds31vbYngOf0n)",
+      "Bash(curl -s -o /dev/null -w \"dashboard http: %{http_code}\\\\n\" http://localhost:8000/d/Pdxds31vbYngOf0n)",
+      "Bash(curl -s http://localhost:8000/stats)",
+      "Read(//Users/jeffy/Desktop/**)",
+      "Bash(npm init *)",
+      "Bash(npm install *)",
+      "Bash(npx playwright *)",
+      "Bash(curl -L -o cloudflared https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-darwin-arm64.tgz)",
+      "Bash(tar -xzf cloudflared)"
+    ]
+  }
+}
